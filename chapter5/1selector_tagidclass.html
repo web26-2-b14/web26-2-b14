@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>1selector_tagidclass</title>
+    <style>
+        /* * {
+             color: blueviolet;
+        }*/
+
+        /* h1 { 
+            color: blue;
+        }
+
+        p {
+            color: red;
+        }*/
+
+        #header {
+            width: 800px;
+            margin: 0 auto;
+            background: red;
+        }
+
+        #wrap {
+            width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #aside {
+            width: 200px;
+            float: left;
+            background: blue;
+        }
+
+        #content {
+            width: 600px;
+            float: left;
+            background: green;
+
+        }
+
+        #rint {
+            color: red;
+        }
+
+        .select {
+            color: pink;
+        }
+
+        .item {
+            color: red
+        }
+
+        .header {
+            background-color: blue;
+        }
+
+        li.select{color: blueviolet;}
+        
+    </style>
+</head>
+
+<body>
+    <h2>1.전체 선택자</h2>
+    <h2>2.태그 선택자</h2>
+    <h2>3.아이디 선택자</h2>
+    <h2 class="item header">4.클래스 선택자</h2>
+
+    <hr>
+
+
+
+    <ul>
+        <li class="select">사과</li>
+        <li>바나나</li>
+        <li>오렌지</li>
+        <li class="select">감</li>
+
+
+    </ul>
+
+    <hr>
+
+
+    <h1>제목 글자</h1>
+    <p>Lorem ipsum dolor sot amet consecterur adipisicing elit.</p>
+    <p>Culpa necessitaibus consecterur modi quis asperioes volupatatib</p>
+
+
+
+    <div id="header">
+        <h1>#header태그</h1>
+    </div>
+    <div id="wrap">
+        <div id="aside">
+            <h1>#aside태그</h1>
+        </div>
+        <div id="content">
+            <h1>#content 태그</h1>
+        </div>
+    </div>
+</body>
+
+</html>

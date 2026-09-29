@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>5/반응/상태/구조 선택자</title>
+
+    <style>
+        h1:hover {
+            color: red;
+        }
+
+        h1:active {
+            color: blue;
+        }
+
+        /* input태그가 사용가능할때 background-color속성에 white키워드를 적용합니다. */
+        input:enabled {
+            background-color: white;
+        }
+/* input태그가 사용 불가능할때 background-color속성에 gray키워드를 적용합니다. */
+        input:disabled {
+            background-color: gray;
+        }
+/* input태그가 포커스를 맞출때 background-color속성에 gray키워드를 적용합니다. */
+        input:focus {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>1.반응 선택자</h1>
+    <h1>2.상태 선택자</h1>
+
+    <h2>사용 가능</h2>
+    <input>
+    <h2>사용불가능</h2>
+    <input disabled="disabled">
+</body>
+
+</html>
