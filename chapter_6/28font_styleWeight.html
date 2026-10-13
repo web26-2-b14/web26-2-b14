@@ -1,10 +1,51 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">    
+    <meta charset="UTF-8">
     <title>4. 글자 속성</title>
-    
+    <style>
+        .font_big {
+            font-size: 2em;
+        }
+
+        .font italic {
+            font-style: italic;
+        }
+
+        .font_bold {
+            font-weight: bold;
+        }
+
+        .font_center {
+            text-align: center;
+        }
+
+        .font_right {
+            text-align: right;
+        }
+
+        .button {
+            width: 150px;
+            height: 70px;
+            background-color: #FF6A00;
+            border: 10px solid #FFFE23;
+            border-radius: 30px;
+            box-shadow: 5px 5px 5px #A9A9A9;
+        }
+
+        .button>a {
+            display: block;
+            line-height: 70px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        
+    </style>
 </head>
+
 <body>
     <h2>6.4.2 글자 스타일과 두께(예제6-28)</h2>
     <h3>. font-style: 글자 스타일(기울기 등) 지정</h3>
@@ -16,38 +57,38 @@
 
     <h2>6.4.4 링크 글자의 밑줄(예제6-33)</h2>
 
-    
+
     <hr>
-    <h3>[예제6-33]링크 글자의 밑줄 제거</h3> 
+    <h3>[예제6-33]링크 글자의 밑줄 제거</h3>
     <h1>
         <a href="https://www.naver.com/">naver.. Click Me 링크 글자의 밑줄 제거</a>
     </h1>
 
 
     <hr>
-    <h3>[예제6-31]글자를 수직 중앙 정렬 (간단한 버튼 만들기) </h3> 
+    <h3>[예제6-31]글자를 수직 중앙 정렬 (간단한 버튼 만들기) </h3>
     <div class="button">
         <a href="#" class="font_big font_italic font_bold font_center">Click</a>
     </div>
 
-    
+
     <hr>
-    <h3>[예제6-30]text-align속성을 사용할 때 주의사항:span태그는 중앙이라는 개념이 없으므로 text-align 속성이 적용되지 않습니다.</h3> 
+    <h3>[예제6-30]text-align속성을 사용할 때 주의사항:span태그는 중앙이라는 개념이 없으므로 text-align 속성이 적용되지 않습니다.</h3>
     <span class="font_center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-    <p class="font_center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p
+    <p class="font_center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p <hr>
 
 
-    <hr>
-    <h3>[예제6-29]글자 정렬 </h3> 
+    <h3>[예제6-29]글자 정렬 </h3>
     <p class="font_big font_italic font_bold font_center">Lorem ipsum dolor</p>
     <p class="font_bold font_right">2026.10.06</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
     <hr>
-    <h3>[예제6-28]글자의 스타일과 굵기 조정 </h3> 
+    <h3>[예제6-28]글자의 스타일과 굵기 조정 </h3>
     <p class="font_big font_italic font_bold">Lorem ipsum dolor sit amet</p>
 
 
 
 </body>
+
 </html>

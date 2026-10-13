@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">    
+    <meta charset="UTF-8">
     <title>5. 위치 속성</title>
-    
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+
+        /*left속성과 top속성 적용하기
+        z-index는 요소가 겹칠때의 표시 순서를 결정함.(숫자가 클수록 위에 표시됨)*/
+        .box:nth-child(1) {
+            background-color: red;
+            left: 10px;
+            top: 10px;
+            z-index: 100;
+        }
+
+        .box:nth-child(2) {
+            background-color: green;
+            left: 50px;
+            top: 50px;
+            z-index: 50;
+        }
+
+        .box:nth-child(3) {
+            background-color: blue;
+            left: 90px;
+            top: 90px;
+            z-index: 1;
+        }
+    </style>
+
 </head>
+
 <body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
     <h2>6.5.1 요소의 고정 위치 설정(예제6-34)</h2>
-    <h3> 1. position속성</h3>    
+    <h3> 1. position속성</h3>
     <h4>. position: absolute; - 요소를 절대 위치로 이동</h4>
     <h4>. position: fixed; - 화면을 기준으로 절대 위치 좌표 설정</h4>
     <h4>. position: relative; - 요소를 상대 위치로 이동</h4>
@@ -17,9 +53,8 @@
 
     <hr>
     <h3>[예제6-34]absolute키워드: 절대 위치로 요소 이동</h3>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+
 
 </body>
+
 </html>
