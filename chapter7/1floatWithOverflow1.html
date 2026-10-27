@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>1floatWithOverflow1</title>
+    <style>
+        /*부모*/
+        div.container {
+            /*부모의 overflow속성에는 hidden 키워드를 적용해야한다*/
+            overflow: hidden;
+        }
+
+        /*자손*/
+        div.item {
+            /*자손에게는 float 속성을 지정*/
+            float: left;
+            margin: 0 3px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>ch7_1정렬...수평, 중앙, One True정렬 레이아웃</h2>
+    <h3>ch7_1_1수평 정렬 레이아웃</h3>
+    <hr>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptatibus error rem laborum necessitatibus
+        amet ipsam magnam quia maxime voluptates? Laborum aperiam recusandae praesentium sequi voluptate magni, ipsum
+        cum possimus.</p>
+    <div class="container">
+        <div class="item">메뉴-1</div>
+        <div class="item">메뉴-2</div>
+        <div class="item">메뉴-3</div>
+        <div class="item">메뉴-4</div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptatibus error rem laborum necessitatibus
+        amet ipsam magnam quia maxime voluptates? Laborum aperiam recusandae praesentium sequi voluptate magni, ipsum
+        cum possimus.</p>
+</body>
+
+</html>
