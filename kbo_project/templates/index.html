@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBO BASEBALL</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>KBO BASEBALL</h1>
+        <nav>
+            <a href="#teams">구단 소개</a>
+            <a href="#schedule">경기 일정</a>
+            <a href="#ranking">팀 순위</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <h2>대한민국 프로야구 정보 센터</h2>
+            <p>10개 구단의 경기 일정과 팀별 승률을 확인하세요.</p>
+        </section>
+
+        <section id="teams">
+            <h2>⚾ KBO 10개 구단</h2>
+            <div class="team-grid">
+                {% for team in teams %}
+                <div class="team-card">
+                    <h3>{{ team.name }}</h3>
+                    <p>{{ team.city }} 연고</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="schedule">
+            <h2>📅 경기 일정 및 결과</h2>
+            
+<form method="GET" action="#schedule" class="schedule-filter">
+    <div class="filter-field">
+        <label for="date">경기 날짜</label>
+        <input
+            type="date"
+            id="date"
+            name="date"
+            value="{{ selected_date }}"
+        >
+    </div>
+
+    <div class="filter-field">
+        <label for="team">구단 선택</label>
+        <select id="team" name="team">
+    <option value="">전체 구단</option>
+    {% for team in teams %}
+    <option
+        value="{{ team.name }}"
+        {% if selected_team == team.name %}selected{% endif %}
+    >
+        {{ team.name }}
+    </option>
+    {% endfor %}
+</select>
+    </div>
+
+    <button type="submit" class="filter-button">경기 조회</button>
+    <a href="/#schedule" class="reset-button">초기화</a>
+</form>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>날짜</th>
+                            <th>홈팀</th>
+                            <th>점수</th>
+                            <th>원정팀</th>
+                            <th>상태</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for game in games %}
+                        <tr>
+                            <td>{{ game.date }}</td>
+                            <td>{{ game.home }}</td>
+                            <td>
+                                {% if game.home_score is not none
+                                      and game.away_score is not none %}
+                                    {{ game.home_score }} : {{ game.away_score }}
+                                {% else %}
+                                    VS
+                                {% endif %}
+                            </td>
+                            <td>{{ game.away }}</td>
+                            <td>
+                                {% if game.home_score is not none
+                                      and game.away_score is not none %}
+                                    <span class="status done">경기 종료</span>
+                                {% else %}
+                                    <span class="status waiting">경기 예정</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <p class="notice">
+                표시된 경기 결과와 일정은 기능 테스트용 예시 데이터입니다.
+            </p>
+        </section>
+
+        <section id="ranking">
+            <h2>🏆 팀 순위 및 승률</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>순위</th>
+                            <th>팀 이름</th>
+                            <th>경기</th>
+                            <th>승</th>
+                            <th>패</th>
+                            <th>무</th>
+                            <th>승률</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for team in standings %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td class="team-name">{{ team.name }}</td>
+                            <td>{{ team.games }}</td>
+                            <td>{{ team.wins }}</td>
+                            <td>{{ team.losses }}</td>
+                            <td>{{ team.draws }}</td>
+                            <td>{{ "%.3f"|format(team.win_rate) }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        KBO BASEBALL · 프로야구 일정 및 승률 조회 프로젝트
+    </footer>
+</body>
+</html>
