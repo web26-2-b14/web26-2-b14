@@ -1,0 +1,13 @@
+   /*모니터*/
+   @media screen {
+       body {
+           background-color: red;
+       }
+   }
+
+   /*프린터*/
+   @media print {
+       body {
+           background-color: green;
+       }
+   }
